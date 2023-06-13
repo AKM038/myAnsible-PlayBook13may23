@@ -1,0 +1,23 @@
+---
+- hosts: all 
+  become: yes
+  tasks: 
+  - name: i want to install git on ubuntu nodes
+    apt:
+     name: git 
+     state: present 
+
+  - name: i want to install tree on ubuntu nodes
+    apt:
+     name: tree
+     state: present 
+
+  - name: i wnt to install webserver on ubuntu nodes
+    apt:
+     name: apache2 
+     state: present 
+
+  - name: Start service apache2, if not started
+    service:
+     name: apache2
+     state: started 
